@@ -1,0 +1,15 @@
+#!/bin/rc
+
+# there is an issue concatinating ' ', so replace with '%' and substitute them later with sed
+dstr = ( '%' '%' '%' '%' H e l l o '%' W o r l d ! '%' '%' '%' '%')
+
+dly=0.25
+
+buf='%%%%'
+
+for (i in `{seq 1 $#dstr}) {
+	buf=`{echo $buf | sed 's/.//'}
+	buf=$buf$dstr($i)
+	echo $buf | sed 's/%/ /g' > /mnt/tm1650/display >[2]/dev/null
+	sleep $dly
+}
