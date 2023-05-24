@@ -8,6 +8,7 @@
 #include <9p.h>
 
 
+/* 9p filesystem functions */
 typedef struct Devfile Devfile;
 
 void	initfs(char *dirname);
@@ -17,6 +18,15 @@ void	fsread(Req *r);
 void	fswrite(Req *r);
 void	fsend(Srv *);
 
+
+/* I2C device functions */
+void	openi2cdev(void);
+void	initi2cdev(void);
+void	deiniti2cdev(void);
+void	closei2cdev(void);
+
+
+/* program logic functions, called from fs functions using I2C functions */
 char*	fsreadctl(Req *r);
 char*	fswritectl(Req *r);
 
@@ -31,12 +41,6 @@ void	glypherr(void);
 
 void	dispon(void);
 void	dispoff(void);
-void	dispsetbright(int);
-
-void	openi2cdev(void);
-void	initi2cdev(void);
-void	deiniti2cdev(void);
-void	closei2cdev(void);
 
 
 struct Devfile {
