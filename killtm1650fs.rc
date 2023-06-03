@@ -1,7 +1,8 @@
 #!/bin/rc
 
-kpidlist=`{ps | grep tm1650fs | awk '{print $2}'}
+unmount /srv/tm1650 /mnt
 
+kpidlist=`{ps | grep tm1650fs | awk '{print $2}'}
 kpid=`{echo $kpidlist | awk '{print $1}'}
 
 echo kill > /proc/$kpid/ctl
