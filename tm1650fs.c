@@ -686,57 +686,57 @@ openi2cdev(void)
 	i2cfdarr[4] = -1;
 
 	/* ctrl - default location fot tm1650 ix 0x24*/
-    if(access("/dev/i2c.24.data", 0) != 0){
+    if(access("/dev/i2c1/i2c.24.data", 0) != 0){
 		if(bind("#J24", "/dev", MBEFORE) < 0){
 		    sysfatal("no J24 device");
         }
     }
 
-	i2cfdarr[0] = open("/dev/i2c.24.data", ORDWR);
+	i2cfdarr[0] = open("/dev/i2c1/i2c.24.data", ORDWR);
 	if(i2cfdarr[0] < 0){
 		sysfatal("cannot open i2c.24.data file");
     }
 
 	/* segment 1 - default location fot tm1650 ix 0x34*/
-	if(access("/dev/i2c.34.data", 0) != 0){
+	if(access("/dev/i2c1/i2c.34.data", 0) != 0){
 		if(bind("#J34", "/dev", MBEFORE) < 0){
 		    sysfatal("no J34 device");
         }
     }
-	i2cfdarr[1] = open("/dev/i2c.34.data", ORDWR);
+	i2cfdarr[1] = open("/dev/i2c1/i2c.34.data", ORDWR);
 	if(i2cfdarr[1] < 0){
 		sysfatal("cannot open i2c.34.data file");
     }
 
 	/* segment 2 - default location fot tm1650 ix 0x35*/
-	if(access("/dev/i2c.35.data", 0) != 0){
+	if(access("/dev/i2c1/i2c.35.data", 0) != 0){
 		if(bind("#J35", "/dev", MBEFORE) < 0){
 		    sysfatal("no J35 device");
         }
     }
-	i2cfdarr[2] = open("/dev/i2c.35.data", ORDWR);
+	i2cfdarr[2] = open("/dev/i2c1/i2c.35.data", ORDWR);
 	if(i2cfdarr[2] < 0){
 		sysfatal("cannot open i2c.35.data file");
     }
 
 	/* segment 3 - default location fot tm1650 ix 0x36*/
-	if(access("/dev/i2c.36.data", 0) != 0){
+	if(access("/dev/i2c1/i2c.36.data", 0) != 0){
 		if(bind("#J36", "/dev", MBEFORE) < 0){
 		    sysfatal("no J36 device");
         }
     }
-	i2cfdarr[3] = open("/dev/i2c.36.data", ORDWR);
+	i2cfdarr[3] = open("/dev/i2c1/i2c.36.data", ORDWR);
 	if(i2cfdarr[3] < 0){
 		sysfatal("cannot open i2c.36.data file");
     }
 
 	/* segment 4 - default location fot tm1650 ix 0x37*/
-	if(access("/dev/i2c.37.data", 0) != 0){
+	if(access("/dev/i2c1/i2c.37.data", 0) != 0){
 		if(bind("#J37", "/dev", MBEFORE) < 0){
 		    sysfatal("no J37 device");
         }
     }
-	i2cfdarr[4] = open("/dev/i2c.37.data", ORDWR);
+	i2cfdarr[4] = open("/dev/i2c1/i2c.37.data", ORDWR);
 	if(i2cfdarr[4] < 0){
 		sysfatal("cannot open i2c.37.data file");
     }
